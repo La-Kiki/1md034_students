@@ -86,17 +86,29 @@
 	    <label for="housenumber">House number</label><br>
 	    <input type="number" id="housenumber" name="housenum" placeholder="House number" />
 	  </p>
+
+	  <p>
+	    <label for="payment">Payment method</label><br />
+	    <select id="payment" name="payment">
+              <option selected="selected">Debit card</option>
+              <option>Credit card</option>
+              <option>Swish</option>
+              <option>Cash(At delivery)</option>
+	    </select>
+	  </p>
+
+	  <p>
+	    <label for="gender">Select gender</label><br>
+	    <label for="female"></label>
+	    <input type="radio" id="female" name="gender" value="Female"/>Female<br>
+	    <label for="male"></label>
+	    <input type="radio" id="male" name="gender" value="Male"/>Male<br>
+	    <label for="nonbinary"></label>
+	    <input type="radio" id="nonbinary" name="gender" value="Non-binary"/>Non-binary<br>
+	    <input type="radio" checked="checked" name="gender" value="Undisclosed"/>Undisclosed<br>
+	  </p>
 	</form>
 
-	<p>
-	  <label for="payment">Payment method</label><br />
-	  <select id="payment" name="payment">
-            <option selected="selected">Debit card</option>
-            <option>Credit card</option>
-            <option>Swish</option>
-            <option>Cash(At delivery)</option>
-	  </select>
-	</p>
       </section>
       </main>
       
