@@ -17,6 +17,7 @@ body {
 
 #kundinformation{
     margin-top: 2.5%;
+    border-style: dashed;
 }
 
 button:hover{
@@ -31,7 +32,7 @@ body{
 }
 
 
-section, .hamburgarintro, #hamburgergreeting{
+form, button, .kundintro, .hamburgarintro, #hamburgergreeting{
     margin-left: 3%;
 }
 
