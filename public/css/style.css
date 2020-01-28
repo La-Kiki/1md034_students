@@ -18,6 +18,31 @@ body {
 
 button:hover{
     background-image: linear-gradient(#CFF0CC, #9FFBCC);
+    background-color: #CFF0CC
     border-color: #CFFBCC;
     cursor:pointer;
 }
+
+body{
+    margin: 0 auto;
+}
+
+table{
+    width: 100%;
+    margin: 0 auto;
+}
+
+table img{ /*Consider browser resizing issue*/
+    display: block;
+    margin: 0 auto;
+    width: 31em;
+    position: relative;
+}
+#hojdaren{
+    width: 22em;
+}
+
+#hamburgartext{
+    padding-left: 200px; /*Will not move text in any case*/
+}
+
