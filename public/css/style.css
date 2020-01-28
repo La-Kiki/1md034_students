@@ -34,12 +34,21 @@ button:hover{
     cursor:pointer;
 }
 
-form, button, .kundintro, .hamburgarintro, #headerimage{
+form, button, .kundintro, .hamburgarintro, #header{
     margin-left: 3%;
 }
-
-#headerimage img{
+#header{
+    padding-left: 22%;
+    overflow: hidden;
+}
+#header img{
     opacity: 0.34;
+    width: 70%;
+}
+#hamburgergreeting{
+    margin-top: -12%;
+    margin-left: 13%;
+    position: absolute;
 }
 
 table{
