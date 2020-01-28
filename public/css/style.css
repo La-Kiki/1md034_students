@@ -1,11 +1,14 @@
 body {
     font-family: arial;
     font-size: 1.08em;
+    margin: 0 auto;
 }
 
 .allergener{
     font-weight: bold;
 }
+
+
 
 #hamburgarmeny{
     color: #ffffff;
@@ -20,6 +23,10 @@ body {
     border-style: dashed;
 }
 
+button{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
 button:hover{
     background-image: linear-gradient(#CFF0CC, #9FFBCC);
     background-color: #CFF0CC
@@ -27,13 +34,12 @@ button:hover{
     cursor:pointer;
 }
 
-body{
-    margin: 0 auto;
+form, button, .kundintro, .hamburgarintro, #headerimage{
+    margin-left: 3%;
 }
 
-
-form, button, .kundintro, .hamburgarintro, #hamburgergreeting{
-    margin-left: 3%;
+#headerimage img{
+    opacity: 0.34;
 }
 
 table{
@@ -41,7 +47,6 @@ table{
     margin: 0 auto;
     margin-left: 2.5%;
 }
-
 table img{ /*Consider browser resizing issue*/
     display: block;
     margin: 0 auto;
@@ -53,9 +58,4 @@ table img{ /*Consider browser resizing issue*/
 
 #hamburgartext{
     padding-left: 200px; /*Will not move text in any case*/
-}
-
-button{
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
 }
