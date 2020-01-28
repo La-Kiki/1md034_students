@@ -7,13 +7,15 @@ body {
     font-weight: bold;
 }
 
-#hamburgare{
+#hamburgarmeny{
     color: #ffffff;
     background-color: #000000;
+    margin: 0 auto;
+    margin-top: 2%;
 }
 
 #kundinformation{
-
+    margin-top: 2.5%;
 }
 
 button:hover{
@@ -27,16 +29,21 @@ body{
     margin: 0 auto;
 }
 
+
+section, .hamburgarintro, #hamburgergreeting{
+    margin-left: 3%;
+}
+
 table{
     width: 100%;
     margin: 0 auto;
+    margin-left: 2.5%;
 }
 
 table img{ /*Consider browser resizing issue*/
     display: block;
     margin: 0 auto;
     width: 31em;
-    position: relative;
 }
 #hojdaren{
     width: 22em;
@@ -46,3 +53,7 @@ table img{ /*Consider browser resizing issue*/
     padding-left: 200px; /*Will not move text in any case*/
 }
 
+button{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
