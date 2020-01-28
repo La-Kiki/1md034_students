@@ -1,0 +1,23 @@
+body {
+    font-family: arial;
+    font-size: 1.08em;
+}
+
+.allergener{
+    font-weight: bold;
+}
+
+#hamburgare{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#kundinformation{
+
+}
+
+button:hover{
+    background-image: linear-gradient(#CFF0CC, #9FFBCC);
+    border-color: #CFFBCC;
+    cursor:pointer;
+}
