@@ -5,12 +5,16 @@
       <title>Hamburgarhandel - Onlinebeställning</title>
       <meta charset="utf-8"/>
     </head>
-    <body>
-      <main>
-      <h1>Välkommen till Hamburgarhandel</h1>
-
-      <section id="hamburgare"><h3>Meny</h3>
-      <p>Här väljer du vilken hamburgare du vill ha:</p>
+  <body>
+    <main>
+      
+      <header id="headerimage">
+	<h1 id="hamburgergreeting">Välkommen till Hamburgarhandel</h1>
+	<img src="https://images.eniro.com/covers/grabo-kvarterskrog-142236158-1551965858440?name=large">
+      </header>
+      
+      <section id="hamburgarmeny"><h3 class="hamburgarintro">Meny</h3>
+      <p class="hamburgarintro">Här väljer du vilken hamburgare du vill ha:</p>
 
       <table>
 	<thead>
@@ -71,8 +75,8 @@
       </table>
       </section>
       
-      <section id="kundinformation"><h3>Kundinformation</h3>
-	<p>Ange leveransaddress och betalningsmetod:</p>
+      <section id="kundinformation"><h3 class="kundintro">Kundinformation</h3>
+	<p class="kundintro">Ange leveransaddress och betalningsmetod:</p>
 	<form>
 	  <p>
 	    <label for="fullname">För- och efternamn</label><br>
@@ -102,13 +106,16 @@
 	  </p>
 	  <!--Gender buttons-->
 	  <p>
-	    <label for="gender">Välj kön</label><br>
-	    <label for="female"></label>
-	    <input type="radio" id="female" name="gender" value="Female"/>Kvinna<br>
-	    <label for="male"></label>
-	    <input type="radio" id="male" name="gender" value="Male"/>Man<br>
-	    <label for="nonbinary"></label>
-	    <input type="radio" id="nonbinary" name="gender" value="Non-binary"/>Icke-binär<br>
+	    <label class="genderlabel" for="gender">Välj kön</label><br>
+	    <label for="female">
+	      <input type="radio" id="female" name="gender" value="Female"/>Kvinna<br>
+	    </label>
+	    <label for="male">
+	      <input type="radio" id="male" name="gender" value="Male"/>Man<br>
+	    </label>
+	    <label for="nonbinary">
+	      <input type="radio" id="nonbinary" name="gender" value="Non-binary"/>Icke-binär<br>
+	    </label>
 	    <input type="radio" checked="checked" name="gender" value="Undisclosed"/>Vill ej uppge<br>
 	  </p>
 	</form>
