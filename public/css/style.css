@@ -8,21 +8,6 @@ body {
     font-weight: bold;
 }
 
-
-
-#hamburgarmeny{
-    color: #ffffff;
-    background-color: #000000;
-    margin: 0 auto;
-    margin-top: 2%;
-    border-style: dashed;
-}
-
-#kundinformation{
-    margin-top: 2.5%;
-    border-style: dashed;
-}
-
 button{
     margin-top: 0.5%;
     margin-bottom: 0.5%;
@@ -37,6 +22,8 @@ button:hover{
 form, button, .kundintro, .hamburgarintro, #header{
     margin-left: 3%;
 }
+
+
 #header{
     padding-left: 22%;
     overflow: hidden;
@@ -51,20 +38,99 @@ form, button, .kundintro, .hamburgarintro, #header{
     position: absolute;
 }
 
-table{
+#hamburgarmeny{
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-style: dashed;
+}
+
+#kundinformation{
+    margin-top: 2.5%;
+    border-style: dashed;
+}
+
+.hamburgerwrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 33%;
+    margin-left: 2.5%;
+}
+[class^='box']{
+     border-radius: 5px;
+     padding: 10px;
+}
+[class^='boxtitle']{
+    align-self: start;
+    text-align: center;
+}
+[class^='boximage']{
+    align-self: start;
+    text-align: center;
+}
+
+
+.boxtitle-fin{
+    grid-column: 1;
+    grid-row: 1;
+}
+.boxtitle-hojdaren{
+    grid-column: 2;
+    grid-row: 1;
+}
+.boxtitle-knapertugg{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.boximage-fin{
+    grid-column: 1;
+    grid-row: 2;
+}
+.boximage-hojdaren{
+    grid-column: 2;
+    grid-row: 2;
+}
+.boximage-knapertugg{
+    grid-column: 3;
+    grid-row: 2;
+    widht: 20px;
+}
+
+.boxdesc-fin{
+    grid-column: 1;
+    grid-row: 3;
+}
+.boxdesc-hojdaren{
+    grid-column: 2;
+    grid-row: 3;
+}
+.boxdesc-knapertugg{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+
+
+/*table{
     width: 100%;
     margin: 0 auto;
     margin-left: 2.5%;
 }
-table img{ /*Consider browser resizing issue*/
+table img{ /*Consider browser resizing issue
     display: block;
     margin: 0 auto;
     width: 31em;
-}
+}*/
 #hojdaren{
     width: 22em;
 }
 
-#hamburgartext{
-    padding-left: 200px; /*Will not move text in any case*/
+#knapertugg{
+    width: 29em;
 }
+
+/*#hamburgartext{
+    padding-left: 200px; /*Will not move text in any case
+} Does now */
