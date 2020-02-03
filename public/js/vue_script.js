@@ -1,1 +1,3 @@
-//Temp
+const vm = new Vue ({
+    
+})
