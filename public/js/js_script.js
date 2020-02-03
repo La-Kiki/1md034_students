@@ -28,8 +28,40 @@ let barnburgare = new menuItem("Barnburgare", "Finns med antingen nötkött eller 
 
 let minimalisten = new menuItem("Minimalisten", "Finns i nötkött", "Tomater eller isbergssallad eller utan", "Med eller utan cheddar", "Gluten och laktos kan tas bort", 190, "img/ ADD IMAGE!!");
 
-console.log(finburgare.calories());
-console.log(hojdaren.calories());
-console.log(knapertugg.calories());
-console.log(barnburgare.calories());
-console.log(minimalisten.calories());
+
+//Document appendings - Ask for better formatting
+let pFin = document.createElement("p");
+let finText = document.createTextNode("Finburgare");
+pFin.appendChild(finText);
+document.body.appendChild(pFin);
+
+let pHojd = document.createElement("p");
+let hojdText = document.createTextNode("Höjdaren");
+pHojd.appendChild(hojdText);
+document.body.appendChild(pHojd);
+
+let pKnaper = document.createElement("p");
+let knaperText = document.createTextNode("Knapertugg");
+pKnaper.appendChild(knaperText);
+document.body.appendChild(pKnaper);
+
+let pBarn = document.createElement("p");
+let barnText = document.createTextNode("Barnburgare");
+pBarn.appendChild(barnText);
+document.body.appendChild(pBarn);
+
+let pMini = document.createElement("p");
+let miniText = document.createTextNode("Minimalist");
+pMini.appendChild(miniText);
+  document.body.appendChild(pMini);
+
+
+/*Fråga om dessa format är vad som menas
+
+const vm = new Vue({
+  el: '#myID',
+  data: {
+  burgerIntro: 'Välj en burgare',
+    burgerNames: 'Finburgaren Höjdaren Knapertugg Barnburgare Minimalist'
+  }
+  })*/
