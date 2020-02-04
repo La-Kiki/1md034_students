@@ -13,7 +13,7 @@ class menuItem {
     }
 
     calories(){
-        return "Name: " + this.name + "\n" + "Kcal: " + this.kcal;
+        return "Name: " + this.name + "<br>" + "Kcal: " + this.kcal;
     }
     
 }
@@ -30,38 +30,27 @@ let minimalisten = new menuItem("Minimalisten", "Finns i nötkött", "Tomater elle
 
 
 //Document appendings - Ask for better formatting
-let pFin = document.createElement("p");
-let finText = document.createTextNode("Finburgare");
+/*let pFin = document.createElement("p");
+let finText = document.createTextNode(finburgare.calories());
 pFin.appendChild(finText);
 document.body.appendChild(pFin);
 
 let pHojd = document.createElement("p");
-let hojdText = document.createTextNode("Höjdaren");
+let hojdText = document.createTextNode(hojdaren.calories());
 pHojd.appendChild(hojdText);
 document.body.appendChild(pHojd);
 
 let pKnaper = document.createElement("p");
-let knaperText = document.createTextNode("Knapertugg");
+let knaperText = document.createTextNode(knapertugg.calories());
 pKnaper.appendChild(knaperText);
 document.body.appendChild(pKnaper);
 
 let pBarn = document.createElement("p");
-let barnText = document.createTextNode("Barnburgare");
+let barnText = document.createTextNode(barnburgare.calories());
 pBarn.appendChild(barnText);
 document.body.appendChild(pBarn);
 
 let pMini = document.createElement("p");
-let miniText = document.createTextNode("Minimalist");
+let miniText = document.createTextNode(minimalisten.calories());
 pMini.appendChild(miniText);
-  document.body.appendChild(pMini);
-
-
-/*Fråga om dessa format är vad som menas
-
-const vm = new Vue({
-  el: '#myID',
-  data: {
-  burgerIntro: 'Välj en burgare',
-    burgerNames: 'Finburgaren Höjdaren Knapertugg Barnburgare Minimalist'
-  }
-  })*/
+document.body.appendChild(pMini);*/
