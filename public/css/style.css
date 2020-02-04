@@ -4,7 +4,7 @@ body {
     margin: 0 auto;
 }
 
-.allergener{
+.allergene{
     font-weight: bold;
 }
 
@@ -23,7 +23,6 @@ form, button, .kundintro, .hamburgarintro, #header{
     margin-left: 3%;
 }
 
-
 #header{
     padding-left: 22%;
     overflow: hidden;
@@ -34,7 +33,7 @@ form, button, .kundintro, .hamburgarintro, #header{
 }
 #hamburgergreeting{
     margin-top: -12%;
-    margin-left: 13%;
+    margin-left: 16%;
     position: absolute;
 }
 
@@ -51,12 +50,26 @@ form, button, .kundintro, .hamburgarintro, #header{
     border-style: dashed;
 }
 
-.hamburgerwrapper{
+#hamburgerwrapper{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-left: 2.5%;
 }
+dt {
+    font-weight: bold;
+}
+.burgerName{
+    text-align: center;
+}
+.burgerImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 22em; /* Using % does not center grid?*/
+}
+
+/*
 [class^='box']{
      border-radius: 5px;
      padding: 10px;
@@ -113,23 +126,13 @@ form, button, .kundintro, .hamburgarintro, #header{
 
 
 
-/*table{
-    width: 100%;
-    margin: 0 auto;
-    margin-left: 2.5%;
-}
-table img{ /*Consider browser resizing issue
-    display: block;
-    margin: 0 auto;
-    width: 31em;
-}*/
 #hojdaren{
     width: 22em;
 }
 
 #knapertugg{
     width: 29em;
-}
+}*/
 
 /*#hamburgartext{
     padding-left: 200px; /*Will not move text in any case

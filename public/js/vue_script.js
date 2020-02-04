@@ -1,4 +1,4 @@
-const vm = new Vue ({
+/*const vm = new Vue ({
 
     el: '#content',
     data: {
@@ -12,9 +12,9 @@ const vm = new Vue ({
 <h1> {{ headerContent }}</h1>
 
 <p v-for="burger in menu"> {{ burger.calories() }} 
-<span v-if="burger.allergenes.search('glutenfri') == -1 && burger.allergenes.search('laktosfri') == -1"> {{burger.allergenes}} </span> 
+<span v-if="burger.allergenes.search('glutenfri') == -1 || burger.allergenes.search('laktosfri') == -1"> {{burger.allergenes}} </span> 
 </p>
 
 </div>*/
 
-})
+//})
