@@ -54,3 +54,19 @@ let pMini = document.createElement("p");
 let miniText = document.createTextNode(minimalisten.calories());
 pMini.appendChild(miniText);
 document.body.appendChild(pMini);*/
+
+
+/* LOOPING VERSION OF ABOVE
+let menu = [finburgare, hojdaren, knapertugg, barnburgare, minimalisten];
+var burger;
+
+for (burger of menu){
+	let p = document.createElement("p");
+  let burgerText = document.createTextNode(burger.calories());
+  p.appendChild(burgerText);
+  if( burger.allergenes.search("glutenfri") == -1 || burger.allergenes.search("laktosfri") == -1) {
+    let allergies = document.createTextNode(".\n" + burger.allergenes);
+    p.appendChild(allergies);
+  }
+  document.body.appendChild(p);
+}*/
