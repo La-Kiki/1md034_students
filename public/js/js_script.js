@@ -1,60 +1,27 @@
 
+/*let orderButton = document.getElementById("orderButton");
 
-//Document appendings - Ask for better formatting
-/*let pFin = document.createElement("p");
-let finText = document.createTextNode(finburgare.calories());
-pFin.appendChild(finText);
-document.body.appendChild(pFin);
+orderButton.addEventListener("click", buttonClicked);
 
-let pHojd = document.createElement("p");
-let hojdText = document.createTextNode(hojdaren.calories());
-pHojd.appendChild(hojdText);
-document.body.appendChild(pHojd);
+function buttonClicked() {
+    console.log("Button clicked!");
+    console.log(getFormAnswers);
+}
+*/
+function getFormAnswers() {
+    let fullName = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let streetName = document.getElementById("streetname").value;
+    let houseNumber = document.getElementById("housenumber").value;
+    let paymentChoice = document.getElementById("payment").value;
+    let genderChoice = document.getElementById("genderButtons").value;
 
-let pKnaper = document.createElement("p");
-let knaperText = document.createTextNode(knapertugg.calories());
-pKnaper.appendChild(knaperText);
-document.body.appendChild(pKnaper);
+    let formAnswers = [fullName, email, streetName, houseNumber, paymentChoice, genderChoice];
 
-let pBarn = document.createElement("p");
-let barnText = document.createTextNode(barnburgare.calories());
-pBarn.appendChild(barnText);
-document.body.appendChild(pBarn);
-
-let pMini = document.createElement("p");
-let miniText = document.createTextNode(minimalisten.calories());
-pMini.appendChild(miniText);
-document.body.appendChild(pMini);*/
-
-
-// LOOPING VERSION OF ABOVE - CHANGED TO REPLACE DIVS IN HTML
-/*let menu = [finburgare, hojdaren, knapertugg, barnburgare, minimalisten];
-
-let hamburgerwrapper = document.getElementById("hamburgerwrapper");
-
-//FIRST LOOP TO CREATE NAME DIVS
-for (let burger of menu){
-    let burgerName = document.createTextNode(burger.name);
-    let burgerHeader = document.createElement("h3");
-    burgerHeader.appendChild(burgerName);
-    burgerHeader.classList.add("burgerName");
-
-    
-    let burgerImg = document.createElement("img");
-    burgerImg.setAttribute("src", burger.image);
-    burgerImg.classList.add("burgerImg");
-
-    let burgerDesc =  burgerDescription(burger);
-    
-    let burgerDiv = document.createElement("div");
-    burgerDiv.appendChild(burgerHeader);
-    burgerDiv.appendChild(burgerImg);
-    burgerDiv.appendChild(burgerDesc);
-
-    hamburgerwrapper.appendChild(burgerDiv);
+    return formAnswers;
 }
 
-
+/*
 // FOR DESCRIPTION LIST DT-DD - FUNCTION
 function burgerDescription(burger){
     let listDl = document.createElement("dl");
@@ -90,6 +57,7 @@ function burgerDescription(burger){
 */
 
 // FUNCTION TO FIND ALLERGY MENTIONS - TODO
+/*
 function findAllergenes(burger){
     if( burger.allergenes.search("glutenfri") == -1 || burger.allergenes.search("laktosfri") == -1) {
 	let allergyList = ["gluten", "laktos"];
@@ -110,3 +78,4 @@ function findAllergenes(burger){
 	}
     }
 }
+*/

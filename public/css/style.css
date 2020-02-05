@@ -23,6 +23,10 @@ form, button, .kundintro, .hamburgarintro, #header{
     margin-left: 3%;
 }
 
+#orderImage{
+    width: 60px;
+}
+
 #header{
     padding-left: 22%;
     overflow: hidden;
@@ -69,63 +73,8 @@ dt {
     height: 22em; /* Using % does not center grid?*/
 }
 
+
 /*
-[class^='box']{
-     border-radius: 5px;
-     padding: 10px;
-}
-[class^='boxtitle']{
-    align-self: start;
-    text-align: center;
-}
-[class^='boximage']{
-    align-self: start;
-    text-align: center;
-}
-
-
-.boxtitle-fin{
-    grid-column: 1;
-    grid-row: 1;
-}
-.boxtitle-hojdaren{
-    grid-column: 2;
-    grid-row: 1;
-}
-.boxtitle-knapertugg{
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.boximage-fin{
-    grid-column: 1;
-    grid-row: 2;
-}
-.boximage-hojdaren{
-    grid-column: 2;
-    grid-row: 2;
-}
-.boximage-knapertugg{
-    grid-column: 3;
-    grid-row: 2;
-    widht: 20px;
-}
-
-.boxdesc-fin{
-    grid-column: 1;
-    grid-row: 3;
-}
-.boxdesc-hojdaren{
-    grid-column: 2;
-    grid-row: 3;
-}
-.boxdesc-knapertugg{
-    grid-column: 3;
-    grid-row: 3;
-}
-
-
-
 #hojdaren{
     width: 22em;
 }

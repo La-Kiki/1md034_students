@@ -35,6 +35,9 @@
 	    <dd> {{ getBurgerAttributes(burger)[index] }}</dd>
 	    
 	  </dl>
+	  
+	  <label for="hamburgerChoice"> {{burger.name}}</label>
+	  <input v-model="hamburgerChoice" type="checkbox" value=>
 	</div>
 	
       </div>
@@ -42,27 +45,27 @@
       
       <section id="kundinformation"><h3 class="kundintro">Kundinformation</h3>
 	<p class="kundintro">Ange leveransaddress och betalningsmetod:</p>
-	<form>
+	<form id="orderForm">
 	  <p>
 	    <label for="fullname">För- och efternamn</label><br>
-	    <input type="text" id="fullname" name="fn" required="required" placeholder="För- och efternamn" />
+	    <input v-model="fullName" type="text" id="fullname" name="fn" required="required" placeholder="För- och efternamn" />
 	  </p>
 	  <p>
 	    <label for="email">E-post</label><br>
-	    <input type="email" id="email" name="em" required="required" placeholder="E-post" />
+	    <input v-model="eMail" type="email" id="email" name="em" required="required" placeholder="E-post" />
 	  </p>
 	  <p>
 	    <label for="streetname">Gatunamn</label><br>
-	    <input type="text" id="streetname" name="strtn" placeholder="Gatunamn" />
+	    <input v-model="streetName" type="text" id="streetname" name="strtn" placeholder="Gatunamn" />
 	  </p>
 	  <p>
 	    <label for="housenumber">Husnummer</label><br>
-	    <input type="number" id="housenumber" name="housenum" placeholder="Husnummer" />
+	    <input v-model="houseNumber" type="number" id="housenumber" name="housenum" placeholder="Husnummer" />
 	  </p>
 
 	  <p>
 	    <label for="payment">Betalningsmetod</label><br />
-	    <select id="payment" name="payment">
+	    <select v-model="paymentChoice" id="payment" name="payment">
               <option selected="selected">Bankkort</option>
               <option>Kreditkort</option>
               <option>Swish</option>
@@ -70,22 +73,45 @@
 	    </select>
 	  </p>
 	  <!--Gender buttons-->
-	  <p>
-	    <label class="genderlabel" for="gender">Välj kön</label><br>
+	  <p id="genderButtons">
+	    <label class="genderlabel" for="gender">Välj kön</label>
+	    <br>
 	    <label for="female">
-	      <input type="radio" id="female" name="gender" value="Female"/>Kvinna<br>
+	      <input v-model="genderChoice" type="radio" id="female" name="gender" value="Kvinna"/>Kvinna
+	      <br>
 	    </label>
 	    <label for="male">
-	      <input type="radio" id="male" name="gender" value="Male"/>Man<br>
+	      <input v-model="genderChoice" type="radio" id="male" name="gender" value="Man"/>Man
+	      <br>
 	    </label>
 	    <label for="nonbinary">
-	      <input type="radio" id="nonbinary" name="gender" value="Non-binary"/>Icke-binär<br>
+	      <input v-model="genderChoice" type="radio" id="nonbinary" name="gender" value="Icke-binär"/>Icke-binär
+	      <br>
 	    </label>
-	    <input type="radio" checked="checked" name="gender" value="Undisclosed"/>Vill ej uppge<br>
+	    <input v-model="genderChoice" type="radio" checked="checked" name="gender" value="Vill ej uppge"/>Vill ej uppge
+	    <br>
 	  </p>
+
 	</form>
 
-	<button type="submit"><img src="https://media.istockphoto.com/vectors/funny-pizza-chef-on-scooter-pizza-delivery-emblem-vector-id517810808" width="60"/> Beställ hamburgare</button>
+	<p v-if="isOrderButtonClicked">
+	  {{ fullName }}
+	  <br>
+	  {{ eMail }}
+	  <br>
+	  {{ streetName }}
+	  <br>
+	  {{ houseNumber }}
+	  <br>
+	  {{ paymentChoice }}
+	  <br>
+	  {{ genderChoice }}
+	  <br>
+	  {{ hamburgerChoice }}
+	</p>
+	<button v-on:click="getFormSummary" id="orderButton" type="submit"><img id="orderImage" src="img/orderImage.jpg"/> Beställ hamburgare</button>
+
+	
       </section>
       </main>
       

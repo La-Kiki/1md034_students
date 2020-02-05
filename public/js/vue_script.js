@@ -4,12 +4,25 @@ const vm = new Vue ({
 	menu: menuItems, //Imported from JSON
 	headerContent: 'Välj en burgare',
 	burgerTerms: ["Protein", "Sallad", "Ost" , "Allergener", "Kcal"],
+	
+	fullName: "",
+	eMail: "",
+	streetName: "",
+	houseNumber: "",
+	paymentChoice: "",
+	genderChoice: "",
+	hamburgerChoice: [],
+
+	isOrderButtonClicked: false
     },
     
     methods:{
 	printTerm: function(){ console.log(this.burgerTerms)},
-	getBurgerAttributes: function(burger){ return [burger.protein, burger.salad, burger.cheese, burger.allergenes, burger.kcal];}
-
+	getBurgerAttributes: function(burger){ return [burger.protein, burger.salad, burger.cheese, burger.allergenes, burger.kcal];},
+	getFormSummary: function(){
+	    this.isOrderButtonClicked = true;
+	},
+	
 	//findAllergenes: function() {} - TODO
     },
 
