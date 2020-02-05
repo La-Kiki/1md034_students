@@ -1,8 +1,7 @@
-const vm = new Vue ({
-
+const vm = new Vue ({ 
     el: '#content',
     data: {
-	menu: [finburgare, hojdaren, knapertugg, barnburgare, minimalisten],
+	menu: menuItems, //Imported from JSON
 	headerContent: 'Välj en burgare',
 	burgerTerms: ["Protein", "Sallad", "Ost" , "Allergener", "Kcal"],
     },
