@@ -24,9 +24,9 @@ let hojdaren = new menuItem("Höjdaren", "Finns med tonfisk eller nötkött.", "Ser
 
 let knapertugg = new menuItem("Knapertugg", "Nötkött med antingen gris- eller kalkonbacon.", "Inget nyttigt här.", "Amerikansk cheddar eller laktosfri kanadensisk cheddar", "Brödet finns i glutenfri version.", 490, "img/BACON KING.PNG");
 
-let barnburgare = new menuItem("Barnburgare", "Finns med antingen nötkött eller kyckling", "Enkel isbergssallad", "Hushållsost", "Finns i glutenfria och laktosfria varianter", 210, "img/hamburgare_2019.png");
+let barnburgare = new menuItem("Barnburgare", "Finns med antingen nötkött eller kyckling", "Enkel isbergssallad", "Hushållsost", "Finns i glutenfria och laktosfria varianter", 210, "img/barnhamburgare.png");
 
-let minimalisten = new menuItem("Minimalisten", "Finns i nötkött", "Tomater eller isbergssallad eller utan", "Med eller utan cheddar", "Gluten och laktos kan tas bort", 190, "img/hamburgare_2019.png");
+let minimalisten = new menuItem("Minimalisten", "Finns med nötkött", "Tomater eller isbergssallad eller utan", "Med eller utan cheddar", "Gluten och laktos kan tas bort", 190, "img/minimalisten.png");
 
 
 //Document appendings - Ask for better formatting
@@ -57,7 +57,7 @@ document.body.appendChild(pMini);*/
 
 
 // LOOPING VERSION OF ABOVE - CHANGED TO REPLACE DIVS IN HTML
-let menu = [finburgare, hojdaren, knapertugg, barnburgare, minimalisten];
+/*let menu = [finburgare, hojdaren, knapertugg, barnburgare, minimalisten];
 
 let hamburgerwrapper = document.getElementById("hamburgerwrapper");
 
@@ -80,8 +80,6 @@ for (let burger of menu){
     burgerDiv.appendChild(burgerImg);
     burgerDiv.appendChild(burgerDesc);
 
-    findAllergenes(burger, burgerDiv);
-
     hamburgerwrapper.appendChild(burgerDiv);
 }
 
@@ -94,7 +92,7 @@ function burgerDescription(burger){
     let burgerTerms = ["Protein", "Sallad", "Ost", "Allergener", "Kcal"];
 
     let i = 0;
-    for(let burgerTerm of burgerAttributes){
+    for(let burgerTerm of burgerTerms){
 	let listTerm = document.createElement("dt");
 	let listDescription = document.createElement("dd");
 	
@@ -106,6 +104,7 @@ function burgerDescription(burger){
 
 	//LINE TO SERCH FOR ALLERGENES
 	if (i == 3){
+	    findAllergenes(burger);
 	    
 	}
 	
@@ -117,25 +116,26 @@ function burgerDescription(burger){
 
     return listDl;
 }
+*/
 
 // FUNCTION TO FIND ALLERGY MENTIONS - TODO
-function findAllergenes(burger, burgerDiv){
+function findAllergenes(burger){
     if( burger.allergenes.search("glutenfri") == -1 || burger.allergenes.search("laktosfri") == -1) {
-
 	let allergyList = ["gluten", "laktos"];
 	let i = 0;
-	for(let allergy of allergyList){
-	    
+	
+	for(let allergy of allergyList){	    
 	    let allergyIndex = burger.allergenes.search(allergy);
 	    if(allergyIndex != -1){
 		let spanElement = document.createElement("span");
 		//let allergyStart = document.createTextNode(burger.allergenes[allergyIndex]);
 		//MUST END AT CORRECT POINT. HOW?
+		//burger
 		
 		//spanElement.appendChild(allergyStart);
 		spanElement.classList.add("allergene");
+		i += 1;
 	    }
-	    i += 1;
 	}
     }
 }

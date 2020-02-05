@@ -23,7 +23,19 @@
       <p class="hamburgarintro">Här väljer du vilken hamburgare du vill ha:</p>
 
       <!-- JAVASCRIPT VERSION HANDLES CONTENT-->
-      <div id="hamburgerwrapper">
+      <div id="hamburgerwrapper" >
+	<!-- VUE VERSION NEEDS VARIABLES AND TAGS-->
+	<div v-for="burger in menu">
+	  <h3 class="burgerName"> {{ burger.name }} </h3> <!-- Dynamic classes inside vue?-->
+	  <img class="burgerImg" v-bind:src=burger.image>
+	  
+	  <dl v-for="(burgerTerm, index) in burgerTerms" >
+	    <dt> {{ burgerTerm }}</dt>
+	    <dd> {{ getBurgerAttributes(burger)[index] }}</dd>
+	    
+	  </dl>
+	</div>
+	
       </div>
       </section>
       

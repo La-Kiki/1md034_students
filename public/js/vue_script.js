@@ -1,11 +1,21 @@
-/*const vm = new Vue ({
+const vm = new Vue ({
 
     el: '#content',
     data: {
 	menu: [finburgare, hojdaren, knapertugg, barnburgare, minimalisten],
-	headerContent: 'Välj en burgare'	
-    }
+	headerContent: 'Välj en burgare',
+	burgerTerms: ["Protein", "Sallad", "Ost" , "Allergener", "Kcal"],
+    },
+    
+    methods:{
+	printTerm: function(){ console.log(this.burgerTerms)},
+	getBurgerAttributes: function(burger){ return [burger.protein, burger.salad, burger.cheese, burger.allergenes, burger.kcal];}
 
+	//findAllergenes: function() {} - TODO
+    },
+
+
+})
 
     /*HTML-KOD - EXEMPEL
 
@@ -15,6 +25,6 @@
 <span v-if="burger.allergenes.search('glutenfri') == -1 || burger.allergenes.search('laktosfri') == -1"> {{burger.allergenes}} </span> 
 </p>
 
-</div>*/
+</div>
 
-//})
+*/
