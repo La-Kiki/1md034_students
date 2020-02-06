@@ -1,0 +1,49 @@
+let menuItem = [
+    {
+	"name": "Finburgare",
+	"protein": "",
+	"salad": "",
+	"cheese": "",
+	"allergenes": "",
+	"kcal": "",
+	"image": ""
+    },
+    {
+	"name": "Höjdaren",
+	"protein": "",
+	"salad": "",
+	"cheese": "",
+	"allergenes": "",
+	"kcal": "",
+	"image": ""
+    },
+    {
+	"name": "Knapertugg",
+	"protein": "",
+	"salad": "",
+	"cheese": "",
+	"allergenes": "",
+	"kcal": "",
+	"image": ""
+    },
+    {
+	"name": "Barnburgare",
+	"protein": "",
+	"salad": "",
+	"cheese": "",
+	"allergenes": "",
+	"kcal": "",
+	"image": ""
+    },
+    {
+	"name": "Minimalisten",
+	"protein": "",
+	"salad": "",
+	"cheese": "",
+	"allergenes": "",
+	"kcal": "",
+	"image": ""
+    },
+
+    
+]

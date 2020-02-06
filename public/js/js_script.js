@@ -58,24 +58,17 @@ function burgerDescription(burger){
 
 // FUNCTION TO FIND ALLERGY MENTIONS - TODO
 /*
-function findAllergenes(burger){
-    if( burger.allergenes.search("glutenfri") == -1 || burger.allergenes.search("laktosfri") == -1) {
-	let allergyList = ["gluten", "laktos"];
-	let i = 0;
+function findAllergenes(burger, burgerTerm){
+
+    let allergeneList = ["gluten", "laktos"];
+    if(burgerTerm == "Allergener"){
 	
-	for(let allergy of allergyList){	    
-	    let allergyIndex = burger.allergenes.search(allergy);
-	    if(allergyIndex != -1){
-		let spanElement = document.createElement("span");
-		//let allergyStart = document.createTextNode(burger.allergenes[allergyIndex]);
-		//MUST END AT CORRECT POINT. HOW?
-		//burger
-		
-		//spanElement.appendChild(allergyStart);
-		spanElement.classList.add("allergene");
-		i += 1;
-	    }
+	for(allergene of allergeneList){
+	    let listDescription = document.getElementById(burger.variableName+burgerTerm);
+	    console.log(burger.variableName + burgerTerm);
+	    listDescription.innerHTML.replace(allergene, '<span class="allergene">allergene</span>');
 	}
     }
 }
+
 */
