@@ -7,7 +7,7 @@ const vm = new Vue ({
 	burgerAttributes: "",
 	allergeneList: ["gluten", "Gluten", "laktos", "Laktos"],
 	
-	fullName: "",
+	fullName: "", //Try loop of array instead to put in html v-for formresult
 	eMail: "",
 	streetName: "",
 	houseNumber: "",
