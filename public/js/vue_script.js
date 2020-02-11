@@ -56,8 +56,8 @@ const vm = new Vue ({
 	
 	addAllergeneClass: function(index){
 	    let allergeneHTML= this.burgerAttributes[index];
-	    
-	    for(allergene of this.allergeneList){
+
+	    for(let allergene of this.allergeneList){
 		allergeneHTML = allergeneHTML.replace(allergene, "<span class=\"allergene\"> "+allergene+"</span>");
 	    }
 	    return allergeneHTML;
