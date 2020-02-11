@@ -11,8 +11,6 @@ function buttonClicked() {
 function getFormAnswers() {
     let fullName = document.getElementById("fullname").value;
     let email = document.getElementById("email").value;
-    let streetName = document.getElementById("streetname").value;
-    let houseNumber = document.getElementById("housenumber").value;
     let paymentChoice = document.getElementById("payment").value;
     let genderChoice = document.getElementById("genderButtons").value;
 
