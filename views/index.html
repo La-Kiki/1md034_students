@@ -10,7 +10,7 @@
     <script src="/socket.io/socket.io.js" defer></script>
 
     <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/vue_script.js" defer></script>
+    <script charset="utf-8" src="js/vue_script.js" defer></script>
     
     <title>Hamburgarhandel - Onlinebeställning</title>
     <meta charset="utf-8"/>
@@ -18,7 +18,7 @@
   
   <body id="bodyContent">
     <main id="content">
-      
+
       <header id="header">
 	<img src="img/krog.jpg">
 	<h1 id="hamburgergreeting">Välkommen till Hamburgarhandel</h1>
@@ -36,12 +36,15 @@
 	  
 	  <dl v-for="(burgerTerm, index) in burgerTerms" >
 	    <dt> {{ burgerTerm }}</dt>
-	    <dd> {{ getBurgerAttributes(burger)[index] }}</dd>
+	    <dd v-if="burgerTerm == 'Allergener'" v-html="addAllergeneClass(index)" v-bind:id="burger.variableName + burgerTerm">  </dd>
+	    <dd v-else> {{ getBurgerAttributes(burger)[index] }} </dd>
+	    
+	    <!--<span>{{ findAllergenes(burger, burgerTerm) }}</span>-->
 	    
 	  </dl>
 	  
 	  <label for="hamburgerChoice"> {{burger.name}}</label>
-	  <input v-model="hamburgerChoice" type="checkbox" value=>
+	  <input v-model="hamburgerChoice" type="checkbox" v-bind:value=burger.name> <!-- v-bind dynamically changes value of value--><!-- value must be set to name-->
 	</div>
 	
       </div>
