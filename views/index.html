@@ -33,7 +33,8 @@
 	<div v-for="burger in menu">
 	  <h3 class="burgerName"> {{ burger.name }} </h3> <!-- Dynamic classes inside vue?-->
 	  <img class="burgerImg" v-bind:src=burger.image>
-	  
+
+	  <!--Dynamically lists terms in burger list -->
 	  <dl v-for="(burgerTerm, index) in burgerTerms" >
 	    <dt> {{ burgerTerm }}</dt>
 	    <dd v-if="burgerTerm == 'Allergener'" v-html="addAllergeneClass(index)" v-bind:id="burger.variableName + burgerTerm">  </dd>
@@ -96,15 +97,18 @@
 	    <div id="dots" v-on:click="displayOrder">
               <div 
 		v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-		{{key}}
+		{{order.orderId}}
               </div>
 	    </div>
 	  </div>
 	</form>
 
-    <button v-on:click="getFormSummary" id="orderButton" type="submit"><img id="orderImage" src="img/orderImage.jpg"/> Beställ hamburgare</button>
+	<button v-on:click="getFormSummary(); addOrder();"
+		id="orderButton" type="submit">
+	  <img id="orderImage" src="img/orderImage.jpg"/> Beställ hamburgare
+	</button>
 
-	<span v-if="isOrderButtonClicked">
+	<div class="orderInfo" v-if="isOrderButtonClicked">
 	  {{ fullName }}
 	  <br>
 	  {{ eMail }}
@@ -114,7 +118,7 @@
 	  {{ genderChoice }}
 	  <br>
 	  {{ hamburgerChoice }}
-	</span>
+	</div>
 
 	
       </section>
