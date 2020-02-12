@@ -100,8 +100,9 @@
               </div>
 	    </div>
 	  </div>
-
 	</form>
+
+    <button v-on:click="getFormSummary" id="orderButton" type="submit"><img id="orderImage" src="img/orderImage.jpg"/> Beställ hamburgare</button>
 
 	<span v-if="isOrderButtonClicked">
 	  {{ fullName }}
@@ -114,7 +115,6 @@
 	  <br>
 	  {{ hamburgerChoice }}
 	</span>
-	<button v-on:click="getFormSummary" id="orderButton" type="submit"><img id="orderImage" src="img/orderImage.jpg"/> Beställ hamburgare</button>
 
 	
       </section>
