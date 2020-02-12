@@ -4,15 +4,17 @@ const socket = io();
 const vm = new Vue ({
     el: '#content',
     data: {
-	    orders: {},
+	orders: {},
+	orderTarget: "T",
         order: {
-            orderId: "T",
+            orderId: 0,
             details: {x: -20,
 		      y: -20},
             orderItems: [],
+	    customerInfo: "",
         },
         getNext: 0,
-	    
+
 	menu: menuItems, //Imported from JSON
 	burgerTerms: ["Protein", "Sallad", "Ost" , "Allergener", "Kcal"],
 	burger: "",
@@ -53,7 +55,7 @@ const vm = new Vue ({
 	    return allergeneHTML;
 	},
 
-	getNext: function() {
+	getNextOrderId: function() {
 	    /* This function returns the next available key (order number) in
 	     * the orders object, it works under the assumptions that all keys
 	     * are integers. */
@@ -66,7 +68,10 @@ const vm = new Vue ({
 	     * The click event object contains among other things different
 	     * coordinates that we need when calculating where in the map the click
 	     * actually happened. */
-	    
+	    this.order.customerInfo = [this.fullName,
+				       this.eMail,
+				       this.paymentChoice,
+				       this.genderChoice];
 	    socket.emit('addOrder', this.order);
 
 	},
@@ -76,12 +81,15 @@ const vm = new Vue ({
 		x: event.currentTarget.getBoundingClientRect().left,
 		y: event.currentTarget.getBoundingClientRect().top,
 	    };
-	    this.order.orderId = this.getNext;
+	    this.order.orderId = this.getNextOrderId();
 	    
 	    this.order.details.x = event.clientX - 10 - offset.x;
 	    this.order.details.y = event.clientY - 10 - offset.y;
 	    
 	    this.order.orderItems = this.hamburgerChoice;
+
+	    // Dispatcher uppdateras inte om man väljer på karta innan kundinfo
+	    // Kräver att man trycker på en punkt igen 
         },
     }
 

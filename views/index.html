@@ -40,8 +40,6 @@
 	    <dd v-if="burgerTerm == 'Allergener'" v-html="addAllergeneClass(index)" v-bind:id="burger.variableName + burgerTerm">  </dd>
 	    <dd v-else> {{ getBurgerAttributes(burger)[index] }} </dd>
 	    
-	    <!--<span>{{ findAllergenes(burger, burgerTerm) }}</span>-->
-	    
 	  </dl>
 	  
 	  <label for="hamburgerChoice"> {{burger.name}}</label>
@@ -88,16 +86,15 @@
 	      <input v-model="genderChoice" type="radio" id="nonbinary" name="gender" value="Icke-binär"/>Icke-binär
 	      <br>
 	    </label>
-	    <input v-model="genderChoice" type="radio" checked="checked" name="gender" value="Vill ej uppge"/>Vill ej uppge
+	<!--No longer checked with v-model?--><input v-model="genderChoice" type="radio" checked="checked" name="gender" value="Vill ej uppge"/>Vill ej uppge
 	    <br>
 	  </p>
 
-	  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
 	  <div class="view-box">
 	    <div id="dots" v-on:click="displayOrder">
               <div 
 		v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-		{{order.orderId}}
+		{{orderTarget}}
               </div>
 	    </div>
 	  </div>
@@ -109,21 +106,28 @@
 	</button>
 
 	<div class="orderInfo" v-if="isOrderButtonClicked">
-	  {{ fullName }}
+	  <h3>Beställingsbekräftelse</h3>
+	  <h4>Kundinformation</h4>
+	  Namn: {{ fullName }}
 	  <br>
-	  {{ eMail }}
+	  E-post: {{ eMail }}
 	  <br>
-	  {{ paymentChoice }}
+	  Betalningsmetod: {{ paymentChoice }}
 	  <br>
-	  {{ genderChoice }}
+	  Kön: {{ genderChoice }}
 	  <br>
-	  {{ hamburgerChoice }}
+	  <h4>Beställning</h4>
+	  <ul>
+	    <li v-for="hamburger in hamburgerChoice">
+	      {{ hamburger }}
+	    </li>
+	  </ul>
 	</div>
 
 	
       </section>
-      </main>
-      
+    </main>
+    
       <footer>
       </footer>
     </body>
