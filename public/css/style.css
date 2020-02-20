@@ -19,7 +19,7 @@ button:hover{
     cursor:pointer;
 }
 
-form, button, .kundintro, .hamburgarintro, #header{
+form, button, .kundintro, .hamburgarintro, .orderInfo, #header{
     margin-left: 3%;
 }
 

@@ -4,16 +4,17 @@ const socket = io();
 const vm = new Vue ({
     el: '#content',
     data: {
-	    orders: {},
+	orders: {},
+	orderTarget: "T",
         order: {
-            orderId: "T",
-            details: {
-                x: 0
-		        y: 0},
-            orderItems: "",
+            orderId: 0,
+            details: {x: -20,
+		      y: -20},
+            orderItems: [],
+	    customerInfo: "",
         },
         getNext: 0,
-	    
+
 	menu: menuItems, //Imported from JSON
 	burgerTerms: ["Protein", "Sallad", "Ost" , "Allergener", "Kcal"],
 	burger: "",
@@ -54,11 +55,11 @@ const vm = new Vue ({
 	    return allergeneHTML;
 	},
 
-	getNext: function() {
+	getNextOrderId: function() {
 	    /* This function returns the next available key (order number) in
 	     * the orders object, it works under the assumptions that all keys
 	     * are integers. */
-        this.getNext += 1;
+            this.getNext += 1;
 	    return this.getNext;
 	},
 	addOrder: function() {
@@ -67,26 +68,32 @@ const vm = new Vue ({
 	     * The click event object contains among other things different
 	     * coordinates that we need when calculating where in the map the click
 	     * actually happened. */
-	    let offset = {
-		    x: this.order.details.x,
-		    y: this.order.details.y,
-	    };
+	    this.order.customerInfo = [this.fullName,
+				       this.eMail,
+				       this.paymentChoice,
+				       this.genderChoice];
 	    socket.emit('addOrder', this.order);
+
 	},
-        displayOrder: function(event){
+	displayOrder: function(event){
 
-            let offset = {
-		        x: event.currentTarget.getBoundingClientRect().left,
-		        y: event.currentTarget.getBoundingClientRect().top,
-	        };
-            this.order.details = {event.clientX - 10 - offset.x,
-		                          event.clientY - 10 - offset.y,};
-            
-            this.order.orderItems = this.hamburgerChoice;
-        }
-    },
+	    let offset = {
+		x: event.currentTarget.getBoundingClientRect().left,
+		y: event.currentTarget.getBoundingClientRect().top,
+	    };
+	    this.order.orderId = this.getNextOrderId();
+	    
+	    this.order.details.x = event.clientX - 10 - offset.x;
+	    this.order.details.y = event.clientY - 10 - offset.y;
+	    
+	    this.order.orderItems = this.hamburgerChoice;
 
-})
+	    // Dispatcher uppdateras inte om man väljer på karta innan kundinfo
+	    // Kräver att man trycker på en punkt igen 
+        },
+    }
+
+});
 
 /*	findAllergenes: function(burger, burgerTerm){
 	    let allergeneList = ["gluten", "laktos"];
